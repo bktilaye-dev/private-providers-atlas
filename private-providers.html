@@ -195,6 +195,8 @@
     <p><b>CD34+ stem cells:</b> no private clinic was found offering CD34+ hematopoietic stem cell products as a distinct cancer-immunotherapy service. CD34+ selection is a legitimate technique used in hospital-based bone-marrow/stem-cell transplantation (graft purification), not something marketed on its own by the private clinics researched here. Where these clinics say "stem cell therapy," it is almost always autologous mesenchymal stem cells (from fat or bone marrow) sold for general regenerative purposes — not tumor-antigen-specific, and not the same thing as CD34+ selection.</p>
     <p><b>CAR-T:</b> legitimate, commercially available private CAR-T access exists in Singapore and China — but only for the antigen/indications each product is actually approved for (multiple myeloma, ALL, non-Hodgkin lymphoma). No private CAR-T offering for a solid tumor like glioblastoma was found anywhere. The two Singapore entries below are included for completeness and are explicitly marked as not relevant to this diagnosis.</p>
     <p><b>Reddit &amp; patient forums:</b> direct Reddit threads specifically about most named clinics were sparse; the most substantive patient-reported detail came from longer-running cancer-patient community forums (Inspire.com's breast/ovarian cancer groups) rather than Reddit itself, and is cited where found. Its absence for a given provider means it wasn't found, not that it doesn't exist — search directly before deciding.</p>
+    <p><b>South Korea:</b> a follow-up scrub (September 2026) found South Korea's NK-cell/immune-cell activity concentrated in hospital-based, academically registered clinical trials (Severance Hospital, Asan Medical Center) rather than the kind of direct-to-patient private clinics documented in Japan and Mexico. No equivalent private-pay Korean provider was found to add here.</p>
+    <p><b>Switzerland:</b> multiple sources describe dendritic-cell vaccination as available at "selected centers in Switzerland," but no specific, independently verifiable clinic name and offering could be confirmed in the same follow-up scrub — noted as a gap rather than an omission of a known provider.</p>
   </div>
 
   <div class="legend">
@@ -275,7 +277,7 @@ const PROVIDERS = [
     insurance:"Not billed to US insurance directly; self-pay.",
     tier:"thin", tierLabel:"No independent published data",
     evidenceNote:"No independently published, peer-reviewed outcome data located. Founded 16+ years ago; backed by Angeles Hospital, part of Mexico's largest private hospital network.",
-    caution:"Online reporting on this clinic is described as mixed/conflicting by third-party review aggregators, alongside individually positive patient testimonials — treat both with equal caution until independently verified.",
+    caution:"The clinic's own site now advertises \"CAR T-Cell therapy\" among its offerings. Legitimate CAR-T manufacturing requires viral-vector genetic engineering in a GMP cleanroom and is essentially never offered outside registered trials or approved commercial products — especially not for a solid tumor like glioblastoma, where no approved or trial CAR-T product exists anywhere. This claim was not independently verified and should be scrutinized directly: ask exactly what \"CAR T-Cell therapy\" means at this facility, who manufactures it, and under what regulatory pathway. Online reporting on this clinic is also described as mixed/conflicting by third-party review aggregators.",
     website:"https://www.immunotherapyinstitute.com/" },
 
   { id:"immunocine", name:"Immunocine Cancer Center", country:"mx", location:"Cancún, Mexico", modalities:["dc"],
@@ -340,6 +342,26 @@ const PROVIDERS = [
     testimonialUrl:"https://issels.com/testimonials/index.html", testimonialLabel:"Clinic-published patient testimonials, 40+ videos (not GBM-specific, not independently verified)",
     website:"https://issels.com/", phone:"+1 (805) 962-2126" },
 
+  { id:"oasis-of-hope", name:"Oasis of Hope Hospital", country:"mx", location:"Tijuana, Mexico", modalities:["dc","nk","tcell"],
+    product:"\"ImPACT\" program — dendritic-cell vaccine, NK cell therapy, and LAK/TIL cell therapy prepared in an on-site lab, over an 18–20 day inpatient program.",
+    startingMaterial:"Blood (dendritic cells loaded with tumor-specific antigens; NK/LAK/TIL expansion)",
+    cost:"Not publicly itemized; marketed as roughly 25–40% of comparable US treatment cost. Request a written quote after medical review.",
+    insurance:"Not billed to US insurance directly; self-pay.",
+    tier:"thin", tierLabel:"No independent published data",
+    evidenceNote:"No independently published, peer-reviewed glioblastoma outcome data located for the current DC/NK/LAK program specifically.",
+    caution:"One of the oldest alternative-cancer hospitals in Mexico (est. by Dr. Ernesto Contreras), historically built on laetrile (amygdalin) — a substance Quackwatch and clinical trials have found ineffective and potentially toxic (cyanide risk). The current DC/NK/LAK program is a distinct, more contemporary offering, but the institution's history is worth knowing before evaluating its other claims.",
+    website:"https://www.oasisofhope.com/", phone:"+1 (619) 690-8450" },
+
+  { id:"sanoviv", name:"Sanoviv Medical Institute", country:"mx", location:"Rosarito, Mexico", modalities:["stem"],
+    product:"A broad integrative-medicine cancer program (immunotherapy, tumor vaccines, peptide therapies) alongside detox, nutrition, and general regenerative/stem-cell services — specific cell types used are not detailed publicly.",
+    startingMaterial:"Not specified for the cancer-immunotherapy component",
+    cost:"Programs range from ~USD 6,100 (1-week detox) to ~USD 44,700 (3-week intensive inpatient cancer program).",
+    insurance:"Not billed to US insurance; self-pay.",
+    tier:"thin", tierLabel:"No independent published data",
+    evidenceNote:"No independently published, peer-reviewed outcome data located. Broader focus than the other Mexico entries here — cancer is one of several programs alongside Lyme disease and general detox/rejuvenation.",
+    caution:"The least cancer-specific, least cell-therapy-specific entry in this compilation — confirm exactly which immune-cell modalities (if any) would actually be used for this diagnosis before assuming it matches the other NK/DC-focused providers here.",
+    website:"https://www.sanoviv.com/", phone:"+1 800-726-6848" },
+
   // ---------------- JAPAN ----------------
   { id:"seren-iseikai", name:"Seren Clinic & Osaka ISEIKAI Clinic", country:"jp", location:"Tokyo, Fukuoka, Nagoya, Kobe, Osaka — Japan", modalities:["dc"],
     product:"Peptide/tumor-antigen-pulsed dendritic-cell vaccines; some delivered via the J-SICT multi-center compassionate-use network.",
@@ -372,6 +394,26 @@ const PROVIDERS = [
     evidenceNote:"Included from an initial listing only — this entry has less independent verification than others in this compilation. Confirm all details directly before relying on them.",
     caution:null,
     src:"https://www.researchgate.net/publication/282041080_The_current_status_of_clinics_providing_private_practice_cell_therapy_in_Japan", srcLabel:"Referenced in academic survey of Japan private cell-therapy clinics" },
+
+  { id:"seta-clinic", name:"Seta Clinic Tokyo", country:"jp", location:"Setagaya, Tokyo, Japan", modalities:["dc","tcell"],
+    product:"Japan's first specialized immuno-cell therapy clinic (established March 1999). Offers two distinct services: Dendritic Cell Vaccine Therapy (tumor-antigen-presenting, tumor-tissue-based) and Activated Autologous Lymphocyte Therapy (blood-based T-cell expansion) — notably, unlike the blood-only Tokyo NK clinics above, this one does offer a genuine tumor-tissue-based option.",
+    startingMaterial:"Tumor tissue (for the dendritic-cell vaccine) or blood (for activated lymphocyte therapy) — ask which applies",
+    cost:"Not publicly listed — request a direct itemized quote.",
+    insurance:"Immuno-Cell Therapy is explicitly not covered by Japan's National Health Insurance. Fully out-of-pocket.",
+    tier:"thin", tierLabel:"Long-running, no independent published data",
+    evidenceNote:"No independently published, peer-reviewed glioblastoma-specific outcome data located, despite being one of the longest-operating clinics of its kind in Japan (25+ years).",
+    caution:null,
+    website:"https://www.j-immunother.com/english/", phone:"+81 3-3708-0086" },
+
+  { id:"neo-clinic-tokyo", name:"NEO Clinic Tokyo", country:"jp", location:"Tokyo, Japan", modalities:["nk"],
+    product:"\"Neo NK cell therapy\" — hyperactivated NK cells collected from blood, expanded in vitro, and reinfused, under a stated \"precision medicine\" framing.",
+    startingMaterial:"Blood only — not manufactured from tumor tissue",
+    cost:"Not independently confirmed — request a direct quote.",
+    insurance:"Presumed \"Advanced Medical Care\" classification like other Japan private clinics — not confirmed specifically for this clinic.",
+    tier:"thin", tierLabel:"No independent published data",
+    evidenceNote:"No independently published, peer-reviewed glioblastoma-specific outcome data located.",
+    caution:"Does not meet the \"from a tumor sample\" bar — blood-derived, general NK activation, not tumor-antigen-specific.",
+    website:"https://neoclinic-en.jp/" },
 
   // ---------------- SINGAPORE ----------------
   { id:"artisan-singapore", name:"Artisan Regenerative Centre", country:"sg", location:"Orchard Road, Singapore", modalities:["nk","tcell","stem"],
